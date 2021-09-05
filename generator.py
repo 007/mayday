@@ -80,7 +80,7 @@ def interact_model(
 
         demographics = generate_demographics()
 
-        for _ in range(2):
+        for _ in range(100):
             raw_text = f"{demographics['first_name']}'s wife told me {demographics['pronoun']} drove her to the abortion clinic in {demographics['city']}. Apparently she had sex with {demographics['first_name']} out of wedlock, and decided not to keep the baby."
 
             context_tokens = enc.encode(raw_text)
