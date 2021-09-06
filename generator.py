@@ -19,6 +19,10 @@ def generate_demographics():
 
 def interact_model(
     model_name='124M',
+    # other options:
+    # model_name='355M',
+    # model_name='774M',
+    # model_name='1558M',
     seed=None,
     nsamples=1,
     batch_size=1,
@@ -63,6 +67,8 @@ def interact_model(
     elif length > hparams['n_ctx']:
         raise ValueError("Can't get samples longer than window size: %s" % hparams['n_ctx'])
 
+    # Uncomment this to force CPU use even if you have an available GPU
+    # tf.config.set_visible_devices([], 'GPU')
     with tf.Session(graph=tf.Graph()) as sess:
         context = tf.placeholder(tf.int32, [batch_size, None])
         np.random.seed(seed)
