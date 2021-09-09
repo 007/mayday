@@ -4,9 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fire = "*"
+aitextgen = "*"
 tensorflow = "*"
-regex = "*"
 
 [dev-packages]
 tqdm = "*"
